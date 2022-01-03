@@ -1,0 +1,11 @@
+  METHOD clienteset_get_entityset.
+
+    DATA(LS_where) = io_tech_request_context->get_osql_where_clause( ).
+
+    SELECT *
+           FROM ztab_clientes
+           INTO CORRESPONDING FIELDS OF TABLE et_entityset
+           WHERE (ls_where).
+
+
+  ENDMETHOD.
